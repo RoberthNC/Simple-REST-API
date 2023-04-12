@@ -1,5 +1,6 @@
 import express from "express";
-import router from "./routes/productosRoutes.js";
+import clientesRouter from "./routes/clientesRoutes.js";
+import productosRouter from "./routes/productosRoutes.js";
 import mongoose from "mongoose";
 
 //Conexión de manera local
@@ -11,7 +12,8 @@ mongoose.connect("mongodb://localhost/restapis",{
 const app = express();
 
 app.use(express.json());
-app.use("/", router);
+app.use("/", clientesRouter);
+app.use("/", productosRouter);
 
 app.listen(4000,()=>{
     console.log("Corriendo en el puerto 4000");
