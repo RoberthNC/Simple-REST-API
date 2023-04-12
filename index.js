@@ -1,6 +1,7 @@
 import express from "express";
 import clientesRouter from "./routes/clientesRoutes.js";
 import productosRouter from "./routes/productosRoutes.js";
+import pedidosRouter from "./routes/pedidosRoutes.js";
 import mongoose from "mongoose";
 
 //Conexión de manera local
@@ -14,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use("/", clientesRouter);
 app.use("/", productosRouter);
+app.use("/", pedidosRouter);
 
 app.listen(4000,()=>{
     console.log("Corriendo en el puerto 4000");
